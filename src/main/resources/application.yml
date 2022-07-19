@@ -1,0 +1,8 @@
+spring:
+  datsource:
+    url: jdbc.postgresql://local:5432/academia?useTimezone=true&serverTimezone=UTC&useLegacyDate
+
+jpa:
+  show-sql: true
+  hibernate:
+    dll-auto: update
