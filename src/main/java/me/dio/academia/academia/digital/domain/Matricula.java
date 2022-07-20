@@ -1,6 +1,7 @@
 package me.dio.academia.academia.digital.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,6 +26,7 @@ public class Matricula implements Serializable {
     @JoinColumn(name = "aluno_id")
     private Aluno aluno;
 
+    @JsonFormat(pattern="dd/MM/yyyy")
     private LocalDateTime dataDaMatricula = LocalDateTime.now();
 
 }
