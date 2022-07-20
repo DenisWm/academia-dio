@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import me.dio.academia.academia.digital.domain.Aluno;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -14,5 +16,7 @@ import java.time.LocalDateTime;
 public class MatriculaDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @NotNull(message = "Preencha o campo corretamente.")
+    @Positive(message = "O Id do aluno precisa ser positivo")
     private Long alunoId;
 }

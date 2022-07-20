@@ -2,11 +2,13 @@ package me.dio.academia.academia.digital.resources;
 
 import me.dio.academia.academia.digital.domain.Aluno;
 import me.dio.academia.academia.digital.domain.AvaliacaoFisica;
+import me.dio.academia.academia.digital.dto.AlunoDTO;
 import me.dio.academia.academia.digital.service.AlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,9 +25,8 @@ public class AlunoResource {
     }
 
     @PostMapping
-    public Aluno salvar(@RequestBody Aluno aluno) {
-        aluno.setId(null);
-        return service.save(aluno);
+    public Aluno salvar(@RequestBody @Valid AlunoDTO alunoDto) {
+        return service.save(alunoDto);
     }
 
     @GetMapping("/avaliacoes/{id}")
