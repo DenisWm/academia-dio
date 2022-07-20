@@ -1,6 +1,7 @@
 package me.dio.academia.academia.digital.service;
 
 import me.dio.academia.academia.digital.domain.Aluno;
+import me.dio.academia.academia.digital.domain.AvaliacaoFisica;
 import me.dio.academia.academia.digital.repositories.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,5 +21,11 @@ public class AlunoService {
 
     public Aluno save(Aluno aluno) {
        return repo.save(aluno);
+    }
+
+
+    public List<AvaliacaoFisica> findAllAvalicoes(Long id) {
+        Aluno aluno = repo.findById(id).get();
+        return aluno.getAvaliacoes();
     }
 }

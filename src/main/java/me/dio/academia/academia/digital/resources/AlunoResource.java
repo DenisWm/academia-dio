@@ -1,6 +1,7 @@
 package me.dio.academia.academia.digital.resources;
 
 import me.dio.academia.academia.digital.domain.Aluno;
+import me.dio.academia.academia.digital.domain.AvaliacaoFisica;
 import me.dio.academia.academia.digital.service.AlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/alunos")
-public class AlunoController {
+public class AlunoResource {
 
     @Autowired
     private AlunoService service;
@@ -25,5 +26,11 @@ public class AlunoController {
     public Aluno salvar(@RequestBody Aluno aluno) {
         aluno.setId(null);
         return service.save(aluno);
+    }
+
+    @GetMapping("/avaliacoes/{id}")
+    public List<AvaliacaoFisica> findAllAvaliacoesId(@PathVariable Long id){
+        return service.findAllAvalicoes(id);
+
     }
 }
