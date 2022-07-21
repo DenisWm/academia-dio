@@ -1,14 +1,13 @@
-package me.dio.academia.academia.digital.service;
+package me.dio.academia.digital.service;
 
-import me.dio.academia.academia.digital.domain.Aluno;
-import me.dio.academia.academia.digital.domain.AvaliacaoFisica;
-import me.dio.academia.academia.digital.dto.AvaliacaoFisicaDTO;
-import me.dio.academia.academia.digital.repositories.AlunoRepository;
-import me.dio.academia.academia.digital.repositories.AvaliacaoFisicaRepository;
+import me.dio.academia.digital.domain.Aluno;
+import me.dio.academia.digital.domain.AvaliacaoFisica;
+import me.dio.academia.digital.dto.AvaliacaoFisicaDTO;
+import me.dio.academia.digital.repositories.AlunoRepository;
+import me.dio.academia.digital.repositories.AvaliacaoFisicaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service

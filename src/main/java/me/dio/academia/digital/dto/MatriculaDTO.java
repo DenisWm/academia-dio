@@ -1,14 +1,12 @@
-package me.dio.academia.academia.digital.dto;
+package me.dio.academia.digital.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import me.dio.academia.academia.digital.domain.Aluno;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor

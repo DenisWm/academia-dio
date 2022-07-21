@@ -1,12 +1,14 @@
-package me.dio.academia.academia.digital.service;
+package me.dio.academia.digital.service;
 
-import me.dio.academia.academia.digital.domain.Aluno;
-import me.dio.academia.academia.digital.domain.AvaliacaoFisica;
-import me.dio.academia.academia.digital.dto.AlunoDTO;
-import me.dio.academia.academia.digital.repositories.AlunoRepository;
+import me.dio.academia.digital.domain.Aluno;
+import me.dio.academia.digital.domain.AvaliacaoFisica;
+import me.dio.academia.digital.dto.AlunoDTO;
+import me.dio.academia.digital.infra.utils.JavaTimeUtils;
+import me.dio.academia.digital.repositories.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -34,5 +36,13 @@ public class AlunoService {
     public List<AvaliacaoFisica> findAllAvalicoes(Long id) {
         Aluno aluno = repo.findById(id).get();
         return aluno.getAvaliacoes();
+    }
+
+    public List<Aluno> findBydataDeNascimento(String dataDeNascimento) {
+        if(dataDeNascimento == null){
+            throw new RuntimeException("Insira uma data de nascimento válida");
+        }
+        LocalDate localDate = LocalDate.parse(dataDeNascimento, JavaTimeUtils.LOCAL_DATE_FORMATTER);
+        return repo.findByDataDeNascimento(localDate);
     }
 }

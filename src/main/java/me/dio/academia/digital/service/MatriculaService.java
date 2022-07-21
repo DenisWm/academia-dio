@@ -1,10 +1,10 @@
-package me.dio.academia.academia.digital.service;
+package me.dio.academia.digital.service;
 
-import me.dio.academia.academia.digital.domain.Aluno;
-import me.dio.academia.academia.digital.domain.Matricula;
-import me.dio.academia.academia.digital.dto.MatriculaDTO;
-import me.dio.academia.academia.digital.repositories.AlunoRepository;
-import me.dio.academia.academia.digital.repositories.MatriculaRepository;
+import me.dio.academia.digital.domain.Aluno;
+import me.dio.academia.digital.domain.Matricula;
+import me.dio.academia.digital.dto.MatriculaDTO;
+import me.dio.academia.digital.repositories.AlunoRepository;
+import me.dio.academia.digital.repositories.MatriculaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +31,9 @@ public class MatriculaService {
 
     public List<Matricula> findAll(){
         return repo.findAll();
+    }
+
+    public List<Matricula> findByBairroEAluno(String bairro) {
+        return repo.findByAlunoBairro(bairro);
     }
 }

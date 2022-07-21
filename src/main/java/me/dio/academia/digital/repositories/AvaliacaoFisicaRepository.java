@@ -1,7 +1,6 @@
-package me.dio.academia.academia.digital.repositories;
+package me.dio.academia.digital.repositories;
 
-import me.dio.academia.academia.digital.domain.Aluno;
-import me.dio.academia.academia.digital.domain.AvaliacaoFisica;
+import me.dio.academia.digital.domain.AvaliacaoFisica;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

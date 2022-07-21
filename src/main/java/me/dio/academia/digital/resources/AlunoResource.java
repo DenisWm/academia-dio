@@ -1,9 +1,9 @@
-package me.dio.academia.academia.digital.resources;
+package me.dio.academia.digital.resources;
 
-import me.dio.academia.academia.digital.domain.Aluno;
-import me.dio.academia.academia.digital.domain.AvaliacaoFisica;
-import me.dio.academia.academia.digital.dto.AlunoDTO;
-import me.dio.academia.academia.digital.service.AlunoService;
+import me.dio.academia.digital.domain.Aluno;
+import me.dio.academia.digital.domain.AvaliacaoFisica;
+import me.dio.academia.digital.dto.AlunoDTO;
+import me.dio.academia.digital.service.AlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,9 +29,16 @@ public class AlunoResource {
         return service.save(alunoDto);
     }
 
+    @RequestMapping(value = "/data", method=RequestMethod.GET)
+    public List<Aluno> findBydataDeNascinemto(@RequestParam(value="dataDeNascimento", required = false) String dataDeNascimento){
+        return service.findBydataDeNascimento(dataDeNascimento);
+    }
+
     @GetMapping("/avaliacoes/{id}")
     public List<AvaliacaoFisica> findAllAvaliacoesId(@PathVariable Long id){
         return service.findAllAvalicoes(id);
 
     }
+
+
 }

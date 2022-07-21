@@ -1,4 +1,4 @@
-package me.dio.academia.academia.digital.dto;
+package me.dio.academia.digital.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

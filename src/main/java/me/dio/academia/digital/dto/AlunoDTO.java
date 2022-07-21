@@ -1,4 +1,4 @@
-package me.dio.academia.academia.digital.dto;
+package me.dio.academia.digital.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
